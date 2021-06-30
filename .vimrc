@@ -9,12 +9,21 @@ let Tlist_WinWidth = 50
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'majutsushi/tagbar'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'gmarik/vundle'
+Plugin 'The-NERD-tree'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-fugitive'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+call vundle#end()
+colo monokai
+
 filetype plugin indent on 
 
 let g:tagbar_ctags_bin='ctags'
@@ -22,11 +31,9 @@ let g:tagbar_width=40
 let g:ycm_global_ycm_extra_conf='/root/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 map <F3> :Tagbar<CR>
 
-Bundle 'bling/vim-airline'
+
 set laststatus=2
 set go=             " 不要图形按钮  
-color asmanian2     " 设置背景主题  
-"set guifont=Courier_New:h10:cANSI   " 设置字体  
 syntax enable
 syntax on           " 语法高亮  
 set t_Co=256
